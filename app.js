@@ -9,6 +9,13 @@ const {List,Task} = require("./db/models");
 //load middleware
 app.use(bodyParser.json());
 
+//CORS headers middleware
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*"); 
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
+
 /*Route Handler*/
 
 /*List Routes*/
